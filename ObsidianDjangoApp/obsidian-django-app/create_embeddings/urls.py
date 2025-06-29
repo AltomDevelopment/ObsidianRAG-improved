@@ -13,7 +13,7 @@ urlpatterns = [
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-\n\n# --- Semantic Search URL ---\nfrom django.urls import path
+# --- Semantic Search URL ---\nfrom django.urls import path
 from . import views
 
 urlpatterns = [

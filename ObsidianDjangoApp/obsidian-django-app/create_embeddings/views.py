@@ -32,12 +32,19 @@ def parse_document(request, pk):
     else:
         return redirect('login')  # Django's built-in login view
 
-\n\n# --- Semantic Search View ---\nfrom django.shortcuts import render
+from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
-from create_embeddings.models import Document
 from rag_pipeline import semantic_search, embed_and_store
-import os
+from create_embeddings.models import Document  # your Django model
+
+# Pre-index your documents once—e.g., via management command or startup hook:
+def load_docs():
+    db_docs = Document.objects.all()
+    items = [(str(doc.id), doc.content, {"title": doc.title}) for doc in db_docs]
+    embed_and_store(items)
+
+# Call load_docs() during startup once!
 
 @csrf_exempt
 def search_documents(request):
