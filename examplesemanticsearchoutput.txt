@@ -1,0 +1,7 @@
+When asked What are my views on life
+{'text': 'The purpose of life is to simply live,'} 
+{'text': "I don't really care what you think. #life #self-improvement"} 
+{'text': 'You can handle whatever life throws at you and you should only accept the appropriate outside pressure. #life #tru
+th #motivation #progression #keepinmind'} 
+{'text': 'You should be more present in your own life then others'} 
+{'text': 'Practice Stoicism and uphold the moral obligations that you have for yourself. #life #philosophy #progression'}

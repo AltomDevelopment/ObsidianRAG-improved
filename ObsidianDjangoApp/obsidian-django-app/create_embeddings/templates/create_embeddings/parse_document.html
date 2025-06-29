@@ -1,0 +1,36 @@
+{% load static %}
+<!-- templates/create_embeddings/parse_document.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2rem;
+        }
+        .pdf-container {
+            width: 100%;
+            height: 90vh;
+            border: 1px solid #ccc;
+        }
+        .back-link {
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <a class="back-link" href="{% url 'upload_document' %}">← Back to Upload</a>
+
+    <h2>{{ document.title }}</h2>
+
+    <div class="pdf-container">
+        <embed src="{{ uploadPDF.url }}" type="application/pdf" width="100%" height="100%" />
+    </div>
+
+</body>
+</html>
